@@ -11,14 +11,14 @@ CONFIG += c++17
 SOURCES += \
     cuerpo.cpp \
     cuerpograf.cpp \
-    fuerzag.cpp \
+    ecuaciones.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     cuerpo.h \
     cuerpograf.h \
-    fuerzag.h \
+    ecuaciones.h \
     mainwindow.h
 
 FORMS += \

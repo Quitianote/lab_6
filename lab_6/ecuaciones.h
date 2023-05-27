@@ -1,16 +1,18 @@
-#ifndef FUERZAG_H
-#define FUERZAG_H
+#ifndef ECUACIONES_H
+#define ECUACIONES_H
 #define G 6.67384
 #define DT 0.1
 
 #include <cmath>
+#include "cuerpo.h"
 
-class fuerzag
+class ecuaciones
 {
 public:
-    fuerzag(float m1,float m2, float r);
+    ecuaciones(float m1,float m2);
 
     float getFg();
+
     void setFg(float m1,float m2, float r);
     void cal(float m1,float m2, float r);
 
@@ -29,4 +31,4 @@ private:
 
 };
 
-#endif // FUERZAG_H
+#endif // ECUACIONES_H

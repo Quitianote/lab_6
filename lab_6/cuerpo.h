@@ -8,19 +8,19 @@
 class cuerpo
 {
 public:
-    cuerpo(float px_=0, float py_=0, float vx_=0, float vy_=0, float rad_=10, float masa_ = 100, float vin_ = 0);
+    cuerpo(float px_=0, float py_=0, float vx_=0, float vy_=0, float rad_=10, float masa_ = 100);
 
-    float getPx() const;
-    void setPx(float value);
+    float getPx();
+    void setPx();
 
-    float getPy() const;
-    void setPy(float value);
+    float getPy();
+    void setPy();
 
-    float getVx() const;
-    void setVx(float value);
+    float getVx();
+    void setVx();
 
-    float getVy() const;
-    void setVy(float value);
+    float getVy();
+    void setVy();
 
     float getAx() const;
     void setAx(float value);
@@ -32,24 +32,28 @@ public:
 
     void mover(float dt);
 
-    void velocidad_y(float vin, float ay);
-    void velocidad_x(float vin, float ax);
+    void velocidad_y();
+    void velocidad_x();
 
     void acel_x();
     void acel_y();
 
-    void distancia();
-
     void setAng(float _ang);
 
     void setDist(float _r);
+
+    void setMasa(float _masa);//creo que sobra
+    float getMasa();//esto tambien
 
 
 private:
     float px;
     float py;
     const float rad;
-    float vin;
+    const float posx_ini;
+    const float posy_ini;
+    const float vin_x;
+    const float vin_y;
     float vx;
     float vy;
     float ax;

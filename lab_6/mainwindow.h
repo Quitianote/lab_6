@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include "cuerpograf.h"
-#include "fuerzag.h"
+#include "ecuaciones.h"
 #include "cuerpo.h"
 #include <QTimer>
 
@@ -32,6 +32,7 @@ private:
     QGraphicsScene *scene;
     cuerpograf *obj1;
     cuerpograf *obj;
+    ecuaciones *obj1_obj;
     QTimer *timer;
 
 };

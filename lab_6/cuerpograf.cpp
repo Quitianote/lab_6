@@ -1,15 +1,15 @@
 #include "cuerpograf.h"
 
-cuerpograf::cuerpograf(float px_, float py_, float vx_, float vy_, float rad_, float escala_, float masa, float vin)
+cuerpograf::cuerpograf(float px_, float py_, float vx_, float vy_, float rad_, float escala_, float masa)
 {
-    esfera =  new cuerpo(px_, py_, vx_, vy_, rad_, masa, vin);
+    planeta =  new cuerpo(px_, py_, vx_, vy_, rad_, masa);
     escala = escala_;
 }
 
 
 QRectF cuerpograf::boundingRect() const
 {
-        return QRectF(-1*escala*esfera->getRad(),-1*escala*esfera->getRad(),2*escala*esfera->getRad(),2*escala*esfera->getRad());
+        return QRectF(-1*escala*planeta->getRad(),-1*escala*planeta->getRad(),2*escala*planeta->getRad(),2*escala*planeta->getRad());
 }
 
 void cuerpograf::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -20,19 +20,19 @@ void cuerpograf::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
     Q_UNUSED(widget);
 }
 
-void cuerpograf::pos(int v_lim)
+void cuerpograf::pos()
 {
-    setPos(esfera->getPx(),v_lim-(esfera->getPy()));
+    setPos(planeta->getPx(),planeta->getPy());
 }
 
-cuerpo *cuerpograf::getEsfera() const
+cuerpo *cuerpograf::getplaneta() const
 {
-    return esfera;
+    return planeta;
 }
 
-void cuerpograf::setEsfera(cuerpo *value)
+void cuerpograf::setplaneta(cuerpo *value)
 {
-    esfera = value;
+    planeta = value;
 }
 
 float cuerpograf::getEscala() const
@@ -47,7 +47,7 @@ void cuerpograf::setEscala(float value)
 
 void cuerpograf::actualizar(float dt, int v_lim)
 {
-    //esfera->mover(dt);
+    //planeta->mover(dt);
     //pos(v_lim);
 
 }
