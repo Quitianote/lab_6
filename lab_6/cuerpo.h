@@ -8,62 +8,62 @@
 class cuerpo
 {
 public:
-    cuerpo(float px_=0, float py_=0, float vx_=0, float vy_=0, float rad_=10, float masa_ = 100);
+    cuerpo(double px_=0, double py_=0, double vx_=0, double vy_=0, double rad_=10, double masa_ = 100);
 
-    float getPx();
+    double getPx();
     void setPx();
 
-    float getPy();
+    double getPy();
     void setPy();
 
-    float getVx();
-    void setVx(float m2);
+    double getVx();
+    void setVx(double m2);
 
-    float getVy();
-    void setVy(float m2);
+    double getVy();
+    void setVy(double m2);
 
-    float getRad() const;
+    double getRad() const;
 
-    void mover(float dt);
+    void mover(double dt);
 
     void velocidad_y();
     void velocidad_x();
 
-    void acel_x(float m2);
-    void acel_y(float m2);
+    void acel_x(double m2);
+    void acel_y(double m2);
 
-    float getAcelx();
-    float getAcely();
+    double getAcelx();
+    double getAcely();
 
-    void setAng(float _ang);
-    float getAng();
+    void setAng(double _ang);
+    double getAng();
 
-    void setDist(float _r);
-    float getDist();
+    void setDist(double _r);
+    double getDist();
 
-    void setMasa(float _masa);//creo que sobra
-    float getMasa();//esto tambien
+    void setMasa(double _masa);//creo que sobra
+    double getMasa();//esto tambien
 
-    float getPosinix();
-    float getPosiniy();
-    float getVinix();
-    float getViniy();
+    double getPosinix();
+    double getPosiniy();
+    double getVinix();
+    double getViniy();
 
 private:
-    float px;
-    float py;
-    const float rad;
-    const float posx_ini;
-    const float posy_ini;
-    const float vin_x;
-    const float vin_y;
-    float vx;
-    float vy;
-    float ax;
-    float ay;
-    float ang;
-    float r;
-    float masa;
+    double px;
+    double py;
+    const double rad;
+    const double posx_ini;
+    const double posy_ini;
+    const double vin_x;
+    const double vin_y;
+    double vx;
+    double vy;
+    double ax;
+    double ay;
+    double ang;
+    double r;
+    double masa;
 
 };
 

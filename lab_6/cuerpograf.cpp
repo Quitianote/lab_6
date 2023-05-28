@@ -1,6 +1,6 @@
 #include "cuerpograf.h"
 
-cuerpograf::cuerpograf(float px_, float py_, float vx_, float vy_, float rad_, float escala_, float masa)
+cuerpograf::cuerpograf(double px_, double py_, double vx_, double vy_, double rad_, double escala_, double masa)
 {
     planeta =  new cuerpo(px_, py_, vx_, vy_, rad_, masa);
     escala = escala_;

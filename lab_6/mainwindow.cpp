@@ -13,11 +13,11 @@ MainWindow::MainWindow(QWidget *parent)
     scene->addRect(scene->sceneRect());
     ui->graphicsView->setScene(scene);
 
-    obj = new cuerpograf(500,500,0,0,20,1, 10000);
+    obj = new cuerpograf(500,300,0,0,20,1, 10000);
     obj->pos();
     scene->addItem(obj);
 
-    obj1 = new cuerpograf(50,100,5,0,10,1, 10);
+    obj1 = new cuerpograf(400,500,50,100,10,1, 10);
     obj1->pos();
     scene->addItem(obj1);
 
@@ -55,31 +55,31 @@ void MainWindow::actualizar()
     obj->getplaneta()->setVy(obj1->getplaneta()->getMasa());
 
 
-    float posx = obj1->getplaneta()->getPx();
-    float posy = obj1->getplaneta()->getPy();
-    float velx = obj1->getplaneta()->getVx();
-    float vely = obj1->getplaneta()->getVy();
-    float acelx = obj1->getplaneta()->getAcelx();
-    float acely = obj1->getplaneta()->getAcely();
-    float radio = obj1->getplaneta()->getDist();
-    float angulo = obj1->getplaneta()->getAng();
-    float posx_ini = obj1->getplaneta()->getPosinix();
-    float posy_ini = obj1->getplaneta()->getPosiniy();
-    float velx_ini = obj1->getplaneta()->getVinix();
-    float vely_ini = obj1->getplaneta()->getViniy();
+    double posx = obj1->getplaneta()->getPx();
+    double posy = obj1->getplaneta()->getPy();
+    double velx = obj1->getplaneta()->getVx();
+    double vely = obj1->getplaneta()->getVy();
+    double acelx = obj1->getplaneta()->getAcelx();
+    double acely = obj1->getplaneta()->getAcely();
+    double radio = obj1->getplaneta()->getDist();
+    double angulo = obj1->getplaneta()->getAng();
+    double posx_ini = obj1->getplaneta()->getPosinix();
+    double posy_ini = obj1->getplaneta()->getPosiniy();
+    double velx_ini = obj1->getplaneta()->getVinix();
+    double vely_ini = obj1->getplaneta()->getViniy();
 
-    float posx2 = obj->getplaneta()->getPx();
-    float posy2 = obj->getplaneta()->getPy();
-    float velx2 = obj->getplaneta()->getVx();
-    float vely2 = obj->getplaneta()->getVy();
-    float acelx2 = obj->getplaneta()->getAcelx();
-    float acely2 = obj->getplaneta()->getAcely();
-    float radio2 = obj->getplaneta()->getDist();
-    float angulo2 = obj->getplaneta()->getAng();
-    float posx2_ini = obj->getplaneta()->getPosinix();
-    float posy2_ini = obj->getplaneta()->getPosiniy();
-    float velx2_ini = obj->getplaneta()->getVinix();
-    float vely2_ini = obj->getplaneta()->getViniy();
+    double posx2 = obj->getplaneta()->getPx();
+    double posy2 = obj->getplaneta()->getPy();
+    double velx2 = obj->getplaneta()->getVx();
+    double vely2 = obj->getplaneta()->getVy();
+    double acelx2 = obj->getplaneta()->getAcelx();
+    double acely2 = obj->getplaneta()->getAcely();
+    double radio2 = obj->getplaneta()->getDist();
+    double angulo2 = obj->getplaneta()->getAng();
+    double posx2_ini = obj->getplaneta()->getPosinix();
+    double posy2_ini = obj->getplaneta()->getPosiniy();
+    double velx2_ini = obj->getplaneta()->getVinix();
+    double vely2_ini = obj->getplaneta()->getViniy();
 
     obj1->actualizar();
     obj->actualizar();

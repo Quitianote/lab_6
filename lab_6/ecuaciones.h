@@ -9,25 +9,25 @@
 class ecuaciones
 {
 public:
-    ecuaciones(float m1,float m2);
+    ecuaciones(double m1,double m2);
 
-    float getFg();
+    double getFg();
 
-    void setFg(float m1,float m2, float r);
-    void cal(float m1,float m2, float r);
+    void setFg(double m1,double m2, double r);
+    void cal(double m1,double m2, double r);
 
-    float getAng();
-    void setAng(float px1, float py1, float px2, float py2);
+    double getAng();
+    void setAng(double px1, double py1, double px2, double py2);
 
-    float getDis();
-    void setDis(float px1, float py1, float px2, float py2);
+    double getDis();
+    void setDis(double px1, double py1, double px2, double py2);
 
 private:
-    float Fg;
-    float m1;
-    float m2;
-    float r;
-    float ang;
+    double Fg;
+    double m1;
+    double m2;
+    double r;
+    double ang;
 
 };
 

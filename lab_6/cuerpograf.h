@@ -9,7 +9,7 @@ class cuerpograf: public QGraphicsItem
 
 {
 public:
-    cuerpograf(float px_=0, float py_=0, float vx_=0, float vy_=0, float rad_=10, float escala_ = 1, float masa = 100);
+    cuerpograf(double px_=0, double py_=0, double vx_=0, double vy_=0, double rad_=10, double escala_ = 1, double masa = 100);
 
     QRectF boundingRect() const;    //necesario definirla, devuelve el rectangulo que encierra el objeto
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); //define como se pintara el objeto

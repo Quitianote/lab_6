@@ -1,126 +1,128 @@
 #include "cuerpo.h"
 
-cuerpo::cuerpo(float px_, float py_, float vx_, float vy_, float rad_, float masa_):
+cuerpo::cuerpo(double px_, double py_, double vx_, double vy_, double rad_, double masa_):
     px(px_), py(py_),vx(vx_),vy(vy_),rad(rad_), masa(masa_), vin_x(vx_), vin_y(vy_), posx_ini( px_), posy_ini( py_)
 {
 
 }
 
-float cuerpo::getPx()
+double cuerpo::getPx()
 {
     return px;
 }
 
 void cuerpo::setPx()
 {
-    px = posx_ini + (vx*DT) + ((ax*pow(DT, 2)/2));
+    px = px- (posx_ini + vx + (ax/2));
+    if(px < 0)px *= -1;
 }
 
-float cuerpo::getPy()
+double cuerpo::getPy()
 {
     return py;
 }
 
 void cuerpo::setPy()
 {
-    py = posy_ini + (vy*DT) + ((ay*pow(DT, 2)/2));
+    py = py - (posy_ini + vy + (ay/2));
+    if(py < 0)py *= -1;
 }
 
-float cuerpo::getVx()
+double cuerpo::getVx()
 {
     return vx;
 }
 
-void cuerpo::setVx(float m2)
+void cuerpo::setVx(double m2)
 {
     acel_x(m2);
     vx = vin_x + (ax*DT);
     setPx();
 }
 
-float cuerpo::getVy()
+double cuerpo::getVy()
 {
     return vy;
 }
 
-void cuerpo::setVy(float m2)
+void cuerpo::setVy(double m2)
 {
     acel_y(m2);
     vy = vin_y + (ay*DT);
     setPy();
 }
 
-float cuerpo::getRad() const
+double cuerpo::getRad() const
 {
     return rad;
 }
 
-void cuerpo::acel_x(float m2)
+void cuerpo::acel_x(double m2)
 {
-    ax = ((G*m2)/(r*r))*cos(ang);
+    ax = (m2/(r*r))*cos(ang);
 }
 
-void cuerpo::acel_y(float m2)
+void cuerpo::acel_y(double m2)
 {
-    ay = ((G*m2)/(r*r))*sin(ang);
+    ay = (m2/(r*r))*sin(ang);
 }
 
-float cuerpo::getAcelx()
+double cuerpo::getAcelx()
 {
     return ax;
 }
 
-float cuerpo::getAcely()
+double cuerpo::getAcely()
 {
     return ay;
 }
 
-void cuerpo::setAng(float _ang)
+void cuerpo::setAng(double _ang)
 {
     ang = _ang;
 }
 
-float cuerpo::getAng()
+double cuerpo::getAng()
 {
     return ang;
 }
 
-void cuerpo::setDist(float _r)
+void cuerpo::setDist(double _r)
 {
     r = _r;
 }
 
-float cuerpo::getDist()
+double cuerpo::getDist()
 {
     return r;
 }
 
-void cuerpo::setMasa(float _masa)
+void cuerpo::setMasa(double _masa)
 {
     masa = _masa;
 }
 
-float cuerpo::getMasa()
+double cuerpo::getMasa()
 {
     return masa;
 }
 
-float cuerpo::getPosinix()
+double cuerpo::getPosinix()
 {
     return posx_ini;
 }
 
-float cuerpo::getPosiniy()
+double cuerpo::getPosiniy()
 {
     return posy_ini;
 }
 
-float cuerpo::getVinix()
+double cuerpo::getVinix()
 {
     return vin_x;
 }
 
-float cuerpo::getViniy()
+double cuerpo::getViniy()
 {
     return vin_y;
 }
