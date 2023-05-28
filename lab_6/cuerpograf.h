@@ -1,6 +1,6 @@
 #ifndef CUERPOGRAF_H
 #define CUERPOGRAF_H
-#define DT 0.1
+#define DT 1
 #include <QGraphicsItem>
 #include <QPainter>
 #include "cuerpo.h"
@@ -21,11 +21,15 @@ public:
     float getEscala() const;
     void setEscala(float value);
 
-    void actualizar(float dt, int v_lim);
+    void actualizar();
+
+    void cambiarColor(const QColor &newColor);
 
 private:
     cuerpo *planeta;
     float escala;
+    QColor color;
+
 };
 
 

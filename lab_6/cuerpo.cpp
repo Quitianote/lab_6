@@ -31,11 +31,11 @@ float cuerpo::getVx()
     return vx;
 }
 
-void cuerpo::setVx()
+void cuerpo::setVx(float m2)
 {
-    acel_x();
+    acel_x(m2);
     vx = vin_x + (ax*DT);
-    setPx;
+    setPx();
 }
 
 float cuerpo::getVy()
@@ -43,31 +43,11 @@ float cuerpo::getVy()
     return vy;
 }
 
-void cuerpo::setVy()
+void cuerpo::setVy(float m2)
 {
-    acel_y();
+    acel_y(m2);
     vy = vin_y + (ay*DT);
-    setPy;
-}
-
-float cuerpo::getAx() const
-{
-    return ax;
-}
-
-void cuerpo::setAx(float value)
-{
-    ax = value;
-}
-
-float cuerpo::getAy() const
-{
-    return ay;
-}
-
-void cuerpo::setAy(float value)
-{
-    ay = value;
+    setPy();
 }
 
 float cuerpo::getRad() const
@@ -75,22 +55,24 @@ float cuerpo::getRad() const
     return rad;
 }
 
-void cuerpo::mover(float dt)
+void cuerpo::acel_x(float m2)
 {
-    vy = vy - G*dt;
-    if (int(vy) <= 0 && int(py) <= rad){ py=rad; vy=0;}
-    px += vx*dt;
-    py += vy*dt;
+    ax = ((G*m2)/(r*r))*cos(ang);
 }
 
-void cuerpo::acel_x()
+void cuerpo::acel_y(float m2)
 {
-    ax = ((G*masa)/(r*r))*cos(ang);
+    ay = ((G*m2)/(r*r))*sin(ang);
 }
 
-void cuerpo::acel_y()
+float cuerpo::getAcelx()
 {
-    ay = ((G*masa)/(r*r))*sin(ang);
+    return ax;
+}
+
+float cuerpo::getAcely()
+{
+    return ay;
 }
 
 void cuerpo::setAng(float _ang)
@@ -98,9 +80,19 @@ void cuerpo::setAng(float _ang)
     ang = _ang;
 }
 
+float cuerpo::getAng()
+{
+    return ang;
+}
+
 void cuerpo::setDist(float _r)
 {
     r = _r;
+}
+
+float cuerpo::getDist()
+{
+    return r;
 }
 
 void cuerpo::setMasa(float _masa)
@@ -111,6 +103,26 @@ void cuerpo::setMasa(float _masa)
 float cuerpo::getMasa()
 {
     return masa;
+}
+
+float cuerpo::getPosinix()
+{
+    return posx_ini;
+}
+
+float cuerpo::getPosiniy()
+{
+    return posy_ini;
+}
+
+float cuerpo::getVinix()
+{
+    return vin_x;
+}
+
+float cuerpo::getViniy()
+{
+    return vin_y;
 }
 
 

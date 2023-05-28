@@ -1,7 +1,7 @@
 #ifndef ECUACIONES_H
 #define ECUACIONES_H
-#define G 6.67384
-#define DT 0.1
+#define G 1
+#define DT 1
 
 #include <cmath>
 #include "cuerpo.h"

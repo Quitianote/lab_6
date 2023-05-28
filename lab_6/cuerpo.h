@@ -1,7 +1,7 @@
 #ifndef CUERPO_H
 #define CUERPO_H
-#define G 6.67384
-#define DT 0.1
+#define G 1
+#define DT 1
 
 #include <cmath>
 
@@ -17,16 +17,10 @@ public:
     void setPy();
 
     float getVx();
-    void setVx();
+    void setVx(float m2);
 
     float getVy();
-    void setVy();
-
-    float getAx() const;
-    void setAx(float value);
-
-    float getAy() const;
-    void setAy(float value);
+    void setVy(float m2);
 
     float getRad() const;
 
@@ -35,16 +29,25 @@ public:
     void velocidad_y();
     void velocidad_x();
 
-    void acel_x();
-    void acel_y();
+    void acel_x(float m2);
+    void acel_y(float m2);
+
+    float getAcelx();
+    float getAcely();
 
     void setAng(float _ang);
+    float getAng();
 
     void setDist(float _r);
+    float getDist();
 
     void setMasa(float _masa);//creo que sobra
     float getMasa();//esto tambien
 
+    float getPosinix();
+    float getPosiniy();
+    float getVinix();
+    float getViniy();
 
 private:
     float px;

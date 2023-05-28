@@ -23,6 +23,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void bordercollision(cuerpograf *b);
+    void cambiarcolor(cuerpograf *painter, QColor color);
 
 private slots:
     void actualizar();

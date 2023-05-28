@@ -14,7 +14,7 @@ QRectF cuerpograf::boundingRect() const
 
 void cuerpograf::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::darkBlue);        //asigna el color
+    painter->setBrush(color);        //asigna el color
     painter->drawEllipse(boundingRect());    //dibuja una elipse encerrada en la boundingRect
     Q_UNUSED(option);
     Q_UNUSED(widget);
@@ -45,10 +45,12 @@ void cuerpograf::setEscala(float value)
     escala = value;
 }
 
-void cuerpograf::actualizar(float dt, int v_lim)
+void cuerpograf::actualizar()
 {
-    //planeta->mover(dt);
-    //pos(v_lim);
+    pos();
 
 }
-
+void cuerpograf::cambiarColor(const QColor &newColor)
+{
+    color = newColor;
+}
