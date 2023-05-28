@@ -13,7 +13,7 @@ double ecuaciones::getFg()
 
 void ecuaciones::setFg(double m1,double m2, double r)
 {
-    Fg = ((G*m1*m2)/(r*r));
+    Fg = ((m1*m2)/(r*r));
 }
 
 double ecuaciones::getAng()

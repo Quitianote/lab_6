@@ -49,6 +49,8 @@ public:
     double getVinix();
     double getViniy();
 
+    double getAnt();
+
 private:
     double px;
     double py;
@@ -63,6 +65,7 @@ private:
     double ay;
     double ang;
     double r;
+    double r_ant = 0;
     double masa;
 
 };

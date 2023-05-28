@@ -7,17 +7,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     scene=new QGraphicsScene(this);
-    h_limit = 1500;
-    v_limit = 1000;
-    scene->setSceneRect(0,0,h_limit,v_limit);
+    scene->setSceneRect(0,0,2000,1000);
     scene->addRect(scene->sceneRect());
     ui->graphicsView->setScene(scene);
+    ui->graphicsView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
 
-    obj = new cuerpograf(500,300,0,0,20,1, 10000);
+    obj = new cuerpograf(500,300,0,0,200,2, 10000);
     obj->pos();
     scene->addItem(obj);
 
-    obj1 = new cuerpograf(400,500,50,100,10,1, 10);
+    obj1 = new cuerpograf(4000,1000,50,-25,100,2, 10);
     obj1->pos();
     scene->addItem(obj1);
 
@@ -28,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
     timer = new QTimer;
     timer->stop();
     connect(timer, SIGNAL(timeout()), this, SLOT(actualizar()));
-    timer->start(10);
+    timer->start(100);
 
 }
 
@@ -46,11 +45,15 @@ void MainWindow::actualizar()
     //ahora calcular la velocidad
     obj1->getplaneta()->setAng(obj1_obj->getAng());//actualizando angulo
     obj1->getplaneta()->setDist(obj1_obj->getDis());//actualizando distancia
+    double radio_ant = obj1->getplaneta()->getAnt();
     obj1->getplaneta()->setVx(obj->getplaneta()->getMasa());
     obj1->getplaneta()->setVy(obj->getplaneta()->getMasa());
 
+
+
     obj->getplaneta()->setAng(obj1_obj->getAng());//actualizando angulo
     obj->getplaneta()->setDist(obj1_obj->getDis());//actualizando distancia
+    double radio_ant2 = obj->getplaneta()->getAnt();
     obj->getplaneta()->setVx(obj1->getplaneta()->getMasa());
     obj->getplaneta()->setVy(obj1->getplaneta()->getMasa());
 
@@ -80,6 +83,7 @@ void MainWindow::actualizar()
     double posy2_ini = obj->getplaneta()->getPosiniy();
     double velx2_ini = obj->getplaneta()->getVinix();
     double vely2_ini = obj->getplaneta()->getViniy();
+
 
     obj1->actualizar();
     obj->actualizar();
