@@ -22,7 +22,9 @@ void cuerpo::setPx()
 
     //if(r > r_ant)px = px - (px - vx);
 
-    if(r > r_ant)px *= -0.8;
+    if(r > r_ant)px *= -0.5;
+
+
 
     //if(r > r_ant)px = px - (px*-0.8);
 
@@ -48,7 +50,7 @@ void cuerpo::setPy()
 
     //if(r > r_ant)py = py - (py - vy);
 
-    if(r > r_ant)py *= -0.8;
+    if(r > r_ant)py *= -0.5;
 
     //if(r > r_ant)py = py - (py*-0.8);
 
@@ -69,7 +71,9 @@ void cuerpo::setVx(double m2)
 
     vx = vin_x + ax;
 
-    //if(r > r_ant) vx = vx - (vx - ax);
+    //if(r > r_ant)vx *= -0.8;
+
+    if(r > r_ant) vx = vx - (vx - ax);
 
     //vx += (vx - (vin_x + ax));//op1
 
@@ -89,7 +93,9 @@ void cuerpo::setVy(double m2)
 
     vy = vin_y + ay;
 
-    //if(r > r_ant) vy = vy - (vy - ay);
+    //if(r > r_ant)vy *= -0.8;
+
+    if(r > r_ant) vy = vy - (vy - ay);
 
     //vy += (vy - (vin_y + ay));//op1
 
